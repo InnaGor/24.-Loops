@@ -79,3 +79,20 @@
 // console.log(`even ${even}`);
 // console.log(`odd ${odd}`);
 
+
+// 6. Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, 
+// хочет ли он решить еще один пример.  И так до тех пор, пока пользователь не откажется.
+
+
+
+// while (true) {
+//     let num_1 = parseInt(prompt("введите число №1"));
+//     let num_2 = parseInt(prompt("введите число №2"));
+//     let oper = prompt("введите действие");
+//     result = eval(`${num_1} ${oper} ${num_2}`);
+//     alert(result);
+//     let c = confirm("хотите еще?");
+//     if (c == false) {
+//         break;
+//     } continue;
+// }

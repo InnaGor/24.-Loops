@@ -49,34 +49,33 @@
 // 5. Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. 
 // При этом также посчитать, сколько четных и нечетных. Вывести статистику на экран.
 //  Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.
-
-
-
-let zero = 0;
-let positive = 0;
-let negative = 0;
-let even = 0;
-let odd = 0;
-let query = parseInt(prompt("введите 10 чисел", ""));
-for (let i = 0; i < 10; i++) {
-    // if (isNaN(query)) {
-    //     alert("Please, type numbers.")
-    // } else 
-    if (query == 0) {
-        zero++;
-    } else if (query > 0) {
-        positive++;
-    } else if (query < 0) {
-        negative++
-    } else if (query % 2 == 0) {
-        even++
-    } else if (query % 2 !== 0) {
-        odd++
-    }
-}
-console.log(`positive ${positive}`);
-console.log(negative);
-console.log(zero);
-console.log(even);
-console.log(odd);
+// ?????? почему не выводит парные? как сделать, чтобы выводило отрицательные?
+// let zero = 0;
+// let positive = 0;
+// let negative = 0;
+// let even = 0;
+// let odd = 0;
+// let query = prompt("введите 10 чисел", "");
+// for (let i = 0; i < 10; i++) {
+//     // if (isNaN(query)) {
+//     //     alert("Please, type numbers.")
+//     // } else 
+//     if (query[i] == 0) {
+//         zero++;
+//     } else if (query[i] > 0) {
+//         positive++;
+//     } else if (query[i] < 0) {
+//         negative++
+//     } else if (query[i] % 2 == 0) {
+//         even++
+//     } else if (query[i] % 2 !== 0) {
+//         odd++
+//     }
+// }
+// console.log(query);
+// console.log(`positive ${positive}`);
+// console.log(`negative ${negative}`);
+// console.log(`zero ${zero}`);
+// console.log(`even ${even}`);
+// console.log(`odd ${odd}`);
 

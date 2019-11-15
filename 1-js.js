@@ -49,40 +49,41 @@
 // При этом также посчитать, сколько четных и нечетных. Вывести статистику на экран.
 //  Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.
 // ?????? почему не выводит парные? как сделать, чтобы выводило отрицательные?
-// let zero = 0;
-// let positive = 0;
-// let negative = 0;
-// let even = 0;
-// let odd = 0;
-// let query = prompt("введите 10 чисел", "");
-// for (let i = 0; i < 10; i++) {
-//     // if (isNaN(query)) {
-//     //     alert("Please, type numbers.")
-//     // } else 
-//     if (query[i] == 0) {
-//         zero++;
-//     } else if (query[i] > 0) {
-//         positive++;
-//     } else if (query[i] < 0) {
-//         negative++
-//     } else if (query[i] % 2 == 0) {
-//         even++
-//     } else if (query[i] % 2 !== 0) {
-//         odd++
+
+// let stats = {
+//     zero: 0,
+//     positive: 0,
+//     negative: 0,
+//     even: 0,
+//     odd: 0,
+//   };
+//   let numbers = [];
+//   for (let i = 0; i < 10; i++) {
+//     let num = parseInt(prompt(`N${i+1}:`));
+
+//     if (num == 0) {
+//       stats.zero++;
+//     } else if (num > 0) {
+//       stats.positive++;
+//     } else {
+//       stats.negative++;
 //     }
-// }
-// console.log(query);
-// console.log(`positive ${positive}`);
-// console.log(`negative ${negative}`);
-// console.log(`zero ${zero}`);
-// console.log(`even ${even}`);
-// console.log(`odd ${odd}`);
+
+//     if (num % 2 == 0) {
+//       stats.even++;
+//     } else {
+//       stats.odd++;
+//     }
+
+//     numbers.push(num);
+//   }
+
+//   console.log(numbers);
+//   console.log(stats);
 
 
 // 6. Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, 
 // хочет ли он решить еще один пример.  И так до тех пор, пока пользователь не откажется.
-
-
 
 // while (true) {
 //     let num_1 = parseInt(prompt("введите число №1"));
@@ -96,3 +97,71 @@
 //     } continue;
 // }
 
+// 7.Запросить у пользователя число и на сколько цифр его сдвинуть.
+//  Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).
+
+/*let num7 = prompt("введите число");
+let num7_1 = prompt("на сколько цифер сдвинуть?");
+let arr_num7 = num7.split('');
+console.log(arr_num7);
+let newArr;
+for (let i = 0; i < num7_1; i++) {
+    let l = arr_num7.shift();
+    newArr = arr_num7.push(l);
+}
+console.log(arr_num7);*/
+// // console.log(newArr);
+
+// 8. Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
+
+/*let week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+let question = confirm(`День недели: ${week[0]}. Хотите увидеть следующий день?`);
+let i = 0;
+while (question == true && i < week.length - 1) {
+    // alert(week[i]);
+    question = confirm(`День недели: ${week[i + 1]}. Хотите увидеть следующий день?`);
+    i++;
+}*/
+
+// 9. Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число необходимо умножить на числа от 1 до 10
+
+/*for (i = 2; i < 10; i++) {
+    for (j = 1; j < 11; j++) {
+        let answer = i * j;
+        console.log(`${i}*${j}=${answer}`);
+    }
+}*/
+
+// 10. Игра «Угадай число». Предложить пользователю загадать число от 0 до 100 и отгадать его следующим способом: 
+// каждую итерацию цикла делите диапазон чисел пополам, записываете результат в N и спрашиваете у пользователя «Ваше число > N, < N или == N?». 
+// В зависимости от того, что указал пользователь, уменьшаете диапазон. Начальный диапазон от 0 до 100, поделили пополам и получили 50. 
+// Если пользователь указал, что его число > 50, то изменили диапазон на от 51 до 100. 
+// И так до тех пор, пока пользователь не выберет == N.
+
+let un = parseInt(prompt("загадай число от 0 до 100"));
+let mid_num = 50;
+let max = 100;
+let min = 0;
+
+while (un !== mid_num) {
+    if (isNaN(un)) {
+        break
+    } else {
+        let answer = prompt(`is your number > or < or = to ${mid_num}?`);
+        if (answer == NaN) {
+            break
+        } else if (answer == ">") {
+            min = mid_num;
+            mid_num = Math.ceil((max - min) / 2 + min);
+        } else if (answer == "<") {
+            max = mid_num
+            mid_num = Math.ceil((max - min) / 2 + min);
+        } else {
+
+            break;
+
+        }
+    }
+}
+
+console.log(`${mid_num} is your number`);
